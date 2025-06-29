@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-<img width="100%" alt="Portfolio Screenshot" src="profile-new.jpg">
+<img width="100%" alt="Portfolio Screenshot" src="https://personal-portfolio-ten-iota-97.vercel.app/profile-new.png">
 
 🌐 **Live Website**: [https://personal-portfolio-ten-iota-97.vercel.app/](https://personal-portfolio-ten-iota-97.vercel.app/)
 
