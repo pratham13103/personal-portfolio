@@ -27,7 +27,7 @@ export const Contact = () => {
 
                   <div style={{ marginTop: '20px' }}>
                     <a
-                      href="/resume.pdf"  // Make sure resume.pdf is in the `public/` folder
+                      href="/Prathamesh_Jaiswal_Resume.pdf"  // Make sure resume.pdf is in the `public/` folder
                       target="_blank"
                       rel="noopener noreferrer"
                     >
