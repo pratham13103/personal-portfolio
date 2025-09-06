@@ -14,16 +14,19 @@ export const Projects = () => {
       title: "Whatsapp Chat Analyzer",
       description: "Analysis and Automation",
       imgUrl: projImg1,
+      link: "https://python-wca.streamlit.app/",
     },
     {
       title: "Edudiagno.com",
       description: "Development & Testing",
       imgUrl: projImg2,
+      link: "https://edudiagno.com/",
     },
     {
       title: "Jaiswal Arts",
       description: "Design & Development",
       imgUrl: projImg3,
+      link: "https://www.jaiswalart.in/",
     },
   ];
 
@@ -36,7 +39,12 @@ export const Projects = () => {
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
                 <h2>Projects</h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                <p>
+                  A selection of projects showcasing my work in data analysis,
+                  full-stack development, and creative design. Each project
+                  demonstrates a mix of problem-solving, technical skills, and
+                  user-focused design.
+                </p>
                 <Tab.Container id="projects-tabs" defaultActiveKey="first">
                   <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                     <Nav.Item>
@@ -58,17 +66,17 @@ export const Projects = () => {
                               <ProjectCard
                                 key={index}
                                 {...project}
-                                />
+                              />
                             )
                           })
                         }
                       </Row>
                     </Tab.Pane>
-                    <Tab.Pane eventKey="section">
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
+                    <Tab.Pane eventKey="second">
+                      <p>Additional projects and experiments will be added here.</p>
                     </Tab.Pane>
                     <Tab.Pane eventKey="third">
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
+                      <p>Creative collaborations and upcoming ideas showcased here.</p>
                     </Tab.Pane>
                   </Tab.Content>
                 </Tab.Container>
