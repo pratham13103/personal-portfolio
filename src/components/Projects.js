@@ -4,6 +4,7 @@ import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
 import projImg4 from "../assets/img/project-img4.png";
+import projImg5 from "../assets/img/project-img5.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
@@ -38,6 +39,15 @@ export const Projects = () => {
       link: "https://github.com/pratham13103/Driver-Drowsiness-Detection",
     },
   ];
+  const tab3Projects = [
+    {
+      title: "Tableau Real-Time Job Analytics Portal",
+      description:
+        "Developed interactive dashboards for real-time job data analytics and visualization using Tableau.",
+      imgUrl: projImg5,
+      link: "https://jobportall13.netlify.app/",
+    },
+  ];
 
   return (
     <section className="project" id="projects">
@@ -47,12 +57,15 @@ export const Projects = () => {
             <TrackVisibility>
               {({ isVisible }) => (
                 <div
-                  className={isVisible ? "animate__animated animate__fadeIn" : ""}
+                  className={
+                    isVisible ? "animate__animated animate__fadeIn" : ""
+                  }
                 >
                   <h2>Projects</h2>
                   <p>
                     Projects highlighting development, data analysis, and
-                    creative design. Each demonstrates technical skills and problem-solving.
+                    creative design. Each demonstrates technical skills and
+                    problem-solving.
                   </p>
 
                   <Tab.Container id="projects-tabs" defaultActiveKey="first">
@@ -64,10 +77,10 @@ export const Projects = () => {
                         <Nav.Link eventKey="first">Web Projects</Nav.Link>
                       </Nav.Item>
                       <Nav.Item>
-                        <Nav.Link eventKey="second">Other Projects</Nav.Link>
+                        <Nav.Link eventKey="second">Python Projects</Nav.Link>
                       </Nav.Item>
                       <Nav.Item>
-                        <Nav.Link eventKey="third">Ideas & Experiments</Nav.Link>
+                        <Nav.Link eventKey="third">Data Analytics Projects</Nav.Link>
                       </Nav.Item>
                     </Nav>
 
@@ -93,10 +106,11 @@ export const Projects = () => {
                       </Tab.Pane>
 
                       <Tab.Pane eventKey="third">
-                        <p>
-                          Creative ideas, experiments, and upcoming projects
-                          showcased here.
-                        </p>
+                        <Row>
+                          {tab3Projects.map((project, index) => (
+                            <ProjectCard key={index} {...project} />
+                          ))}
+                        </Row>
                       </Tab.Pane>
                     </Tab.Content>
                   </Tab.Container>
