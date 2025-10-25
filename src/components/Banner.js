@@ -9,46 +9,53 @@ export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState("");
-  const [delta, setDelta] = useState(300 - Math.random() * 100);
-  const [setIndex] = useState(1);
+  const [delta, setDelta] = useState(150);
+  const [index, setIndex] = useState(1);
   const period = 2000;
 
+  const toRotate = [
+    "Web Developer",
+    "Software Developer",
+    "Automation Engineer",
+  ];
+
   const tick = useCallback(() => {
-    const toRotate = [
-      "Web Developer",
-      "Software Developer",
-      "Automation Engineer",
-    ];
-    let i = loopNum % toRotate.length;
-    let fullText = toRotate[i];
-    let updatedText = isDeleting
+    const i = loopNum % toRotate.length;
+    const fullText = toRotate[i];
+    const updatedText = isDeleting
       ? fullText.substring(0, text.length - 1)
       : fullText.substring(0, text.length + 1);
 
     setText(updatedText);
 
-    if (isDeleting) setDelta((prevDelta) => prevDelta / 2);
+    // Adjust typing speed based on deleting/typing
+    if (isDeleting) {
+      setDelta(75); // faster when deleting
+    } else {
+      setDelta(150); // slower when typing
+    }
 
+    // When full word is typed
     if (!isDeleting && updatedText === fullText) {
       setIsDeleting(true);
-      setIndex((prevIndex) => prevIndex - 1);
-      setDelta(period);
-    } else if (isDeleting && updatedText === "") {
+      setDelta(period); // pause before deleting
+    }
+    // When text fully deleted
+    else if (isDeleting && updatedText === "") {
       setIsDeleting(false);
       setLoopNum(loopNum + 1);
-      setIndex(1);
-      setDelta(500);
-    } else {
-      setIndex((prevIndex) => prevIndex + 1);
+      setDelta(300);
     }
-  }, [text, isDeleting, loopNum,setIndex]);
+
+    setIndex((prev) => prev + 1);
+  }, [text, isDeleting, loopNum]);
 
   useEffect(() => {
-    let ticker = setInterval(() => {
+    const ticker = setTimeout(() => {
       tick();
     }, delta);
 
-    return () => clearInterval(ticker);
+    return () => clearTimeout(ticker);
   }, [text, delta, tick]);
 
   return (
@@ -65,7 +72,7 @@ export const Banner = () => {
                 >
                   <span className="tagline">Welcome to my Portfolio</span>
                   <h1>
-                    {`Hi! I'm Prathamesh Jaiswal`}{" "}
+                    {`Hi! I'm Prathamesh Jaiswal `}
                     <span
                       className="txt-rotate"
                       dataPeriod="1000"
