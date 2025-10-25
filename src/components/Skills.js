@@ -3,8 +3,6 @@ import meter2 from "../assets/img/meter2.svg";
 import meter3 from "../assets/img/meter3.svg";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import arrow1 from "../assets/img/arrow1.svg";
-import arrow2 from "../assets/img/arrow2.svg";
 import colorSharp from "../assets/img/color-sharp.png"
 
 export const Skills = () => {
@@ -38,23 +36,23 @@ export const Skills = () => {
                         <p>I specialize in full-stack development using React (JSX/TSX), Node.js, Express.js, FastAPI, and MongoDB/PostgreSQL.<br></br>With strong expertise in automation, testing, API integration, and authentication, I build scalable, secure, and user-friendly applications. I deploy seamlessly on platforms like Heroku and AWS, using Git for version control and leverage tools like Streamlit, MS Excel, and Nodemailer for enhanced functionality.</p>
                         <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme skill-slider">
                             <div className="item">
-                                <img src={meter1} alt="Image" />
+                                <img src={meter1} alt="Web development skill meter" />
                                 <h5>Web Development</h5>
                             </div>
                             <div className="item">
-                                <img src={meter2} alt="Image" />
+                                <img src={meter2} alt="Backend development skill level" />
                                 <h5>Backend Development</h5>
                             </div>
                             <div className="item">
-                                <img src={meter3} alt="Image" />
+                                <img src={meter3} alt="Automation skill level" />
                                 <h5>Automation</h5>
                             </div>
                             <div className="item">
-                                <img src={meter1} alt="Image" />
+                                <img src={meter1} alt="Hosting and deployment skill level" />
                                 <h5>Hosting and Deployment</h5>
                             </div>
                             <div className="item">
-                                <img src={meter2} alt="Image" />
+                                <img src={meter2} alt="Database management skill level" />
                                 <h5>DBMS</h5>
                             </div>
                         </Carousel>
@@ -62,7 +60,7 @@ export const Skills = () => {
                 </div>
             </div>
         </div>
-        <img className="background-image-left" src={colorSharp} alt="Image" />
+        <img className="background-image-left" src={colorSharp} alt="" />
     </section>
   )
 }

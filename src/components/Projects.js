@@ -3,30 +3,39 @@ import { ProjectCard } from "./ProjectCard";
 import projImg1 from "../assets/img/project-img1.png";
 import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
+import projImg4 from "../assets/img/project-img4.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
-import 'animate.css';
-import TrackVisibility from 'react-on-screen';
+import "animate.css";
+import TrackVisibility from "react-on-screen";
 
 export const Projects = () => {
-
-  const projects = [
+  const tab1Projects = [
     {
       title: "Whatsapp Chat Analyzer",
-      description: "Analysis and Automation",
+      description: "Analyze & automate WhatsApp chats",
       imgUrl: projImg1,
       link: "https://python-wca.streamlit.app/",
     },
     {
       title: "Edudiagno.com",
-      description: "Development & Testing",
+      description: "Career guidance & skill development",
       imgUrl: projImg2,
       link: "https://edudiagno.com/",
     },
     {
       title: "Jaiswal Arts",
-      description: "Design & Development",
+      description: "Traditional & custom art gallery",
       imgUrl: projImg3,
       link: "https://www.jaiswalart.in/",
+    },
+  ];
+
+  const tab2Projects = [
+    {
+      title: "Driver Drowsiness Detection",
+      description: "Real-time driver alertness monitoring",
+      imgUrl: projImg4,
+      link: "https://github.com/pratham13103/Driver-Drowsiness-Detection",
     },
   ];
 
@@ -36,56 +45,73 @@ export const Projects = () => {
         <Row>
           <Col size={12}>
             <TrackVisibility>
-              {({ isVisible }) =>
-              <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
-                <h2>Projects</h2>
-                <p>
-                  A selection of projects showcasing my work in data analysis,
-                  full-stack development, and creative design. Each project
-                  demonstrates a mix of problem-solving, technical skills, and
-                  user-focused design.
-                </p>
-                <Tab.Container id="projects-tabs" defaultActiveKey="first">
-                  <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
-                    <Nav.Item>
-                      <Nav.Link eventKey="first">Tab 1</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link eventKey="second">Tab 2</Nav.Link>
-                    </Nav.Item>
-                    <Nav.Item>
-                      <Nav.Link eventKey="third">Tab 3</Nav.Link>
-                    </Nav.Item>
-                  </Nav>
-                  <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
-                    <Tab.Pane eventKey="first">
-                      <Row>
-                        {
-                          projects.map((project, index) => {
-                            return (
-                              <ProjectCard
-                                key={index}
-                                {...project}
-                              />
-                            )
-                          })
-                        }
-                      </Row>
-                    </Tab.Pane>
-                    <Tab.Pane eventKey="second">
-                      <p>Additional projects and experiments will be added here.</p>
-                    </Tab.Pane>
-                    <Tab.Pane eventKey="third">
-                      <p>Creative collaborations and upcoming ideas showcased here.</p>
-                    </Tab.Pane>
-                  </Tab.Content>
-                </Tab.Container>
-              </div>}
+              {({ isVisible }) => (
+                <div
+                  className={isVisible ? "animate__animated animate__fadeIn" : ""}
+                >
+                  <h2>Projects</h2>
+                  <p>
+                    Projects highlighting development, data analysis, and
+                    creative design. Each demonstrates technical skills and problem-solving.
+                  </p>
+
+                  <Tab.Container id="projects-tabs" defaultActiveKey="first">
+                    <Nav
+                      variant="pills"
+                      className="nav-pills mb-5 justify-content-center align-items-center"
+                    >
+                      <Nav.Item>
+                        <Nav.Link eventKey="first">Web Projects</Nav.Link>
+                      </Nav.Item>
+                      <Nav.Item>
+                        <Nav.Link eventKey="second">Other Projects</Nav.Link>
+                      </Nav.Item>
+                      <Nav.Item>
+                        <Nav.Link eventKey="third">Ideas & Experiments</Nav.Link>
+                      </Nav.Item>
+                    </Nav>
+
+                    <Tab.Content
+                      className={
+                        isVisible ? "animate__animated animate__slideInUp" : ""
+                      }
+                    >
+                      <Tab.Pane eventKey="first">
+                        <Row>
+                          {tab1Projects.map((project, index) => (
+                            <ProjectCard key={index} {...project} />
+                          ))}
+                        </Row>
+                      </Tab.Pane>
+
+                      <Tab.Pane eventKey="second">
+                        <Row>
+                          {tab2Projects.map((project, index) => (
+                            <ProjectCard key={index} {...project} />
+                          ))}
+                        </Row>
+                      </Tab.Pane>
+
+                      <Tab.Pane eventKey="third">
+                        <p>
+                          Creative ideas, experiments, and upcoming projects
+                          showcased here.
+                        </p>
+                      </Tab.Pane>
+                    </Tab.Content>
+                  </Tab.Container>
+                </div>
+              )}
             </TrackVisibility>
           </Col>
         </Row>
       </Container>
-      <img className="background-image-right" src={colorSharp2}></img>
+
+      <img
+        className="background-image-right"
+        src={colorSharp2}
+        alt="Background design"
+      />
     </section>
-  )
-}
+  );
+};
