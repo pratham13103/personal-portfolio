@@ -5,18 +5,13 @@ import projImg2 from "../assets/img/project-img2.png";
 import projImg3 from "../assets/img/project-img3.png";
 import projImg4 from "../assets/img/project-img4.png";
 import projImg5 from "../assets/img/project-img5.png";
+import projImg6 from "../assets/img/project-img6.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
 
 export const Projects = () => {
   const tab1Projects = [
-    {
-      title: "Whatsapp Chat Analyzer",
-      description: "Analyze & automate WhatsApp chats",
-      imgUrl: projImg1,
-      link: "https://python-wca.streamlit.app/",
-    },
     {
       title: "Edudiagno.com",
       description: "Career guidance & skill development",
@@ -41,11 +36,24 @@ export const Projects = () => {
   ];
   const tab3Projects = [
     {
+      title: "Whatsapp Chat Analyzer",
+      description: "Analyze & automate WhatsApp chats",
+      imgUrl: projImg1,
+      link: "https://python-wca.streamlit.app/",
+    },
+    {
       title: "Tableau Real-Time Job Analytics Portal",
       description:
         "Developed interactive dashboards for real-time job data analytics and visualization using Tableau.",
       imgUrl: projImg5,
       link: "https://jobportall13.netlify.app/",
+    },
+    {
+      title: "Twitter Analytics Dashboard (Power BI)",
+      description:
+        "Built a Power BI dashboard to analyze Twitter data, tracking tweet counts, impressions, engagement rate, media views, and user interactions by day and week for actionable insights.",
+      imgUrl: projImg6,
+      link: "https://app.powerbi.com/view?r=eyJrIjoiZGI0YWI0OGEtZWEwZC00YzRlLTk2N2YtMzRhZmE5YTBmMzJkIiwidCI6ImFmMWM1NzY1LTE2NmYtNDZjZC1iYzZiLWNiNDZhNDFhY2IxZiJ9", 
     },
   ];
 
@@ -80,7 +88,9 @@ export const Projects = () => {
                         <Nav.Link eventKey="second">Python Projects</Nav.Link>
                       </Nav.Item>
                       <Nav.Item>
-                        <Nav.Link eventKey="third">Data Analytics Projects</Nav.Link>
+                        <Nav.Link eventKey="third">
+                          Data Analytics Projects
+                        </Nav.Link>
                       </Nav.Item>
                     </Nav>
 
