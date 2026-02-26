@@ -5,19 +5,18 @@ import { ArrowRightCircle } from "react-bootstrap-icons";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
 
+const toRotate = [
+  "Web Developer",
+  "Software Developer",
+  "Automation Engineer",
+];
+
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState("");
   const [delta, setDelta] = useState(150);
-  const [index, setIndex] = useState(1);
   const period = 2000;
-
-  const toRotate = [
-    "Web Developer",
-    "Software Developer",
-    "Automation Engineer",
-  ];
 
   const tick = useCallback(() => {
     const i = loopNum % toRotate.length;
@@ -28,26 +27,20 @@ export const Banner = () => {
 
     setText(updatedText);
 
-    // Adjust typing speed based on deleting/typing
     if (isDeleting) {
-      setDelta(75); // faster when deleting
+      setDelta(75);
     } else {
-      setDelta(150); // slower when typing
+      setDelta(150);
     }
 
-    // When full word is typed
     if (!isDeleting && updatedText === fullText) {
       setIsDeleting(true);
-      setDelta(period); // pause before deleting
-    }
-    // When text fully deleted
-    else if (isDeleting && updatedText === "") {
+      setDelta(period);
+    } else if (isDeleting && updatedText === "") {
       setIsDeleting(false);
       setLoopNum(loopNum + 1);
       setDelta(300);
     }
-
-    setIndex((prev) => prev + 1);
   }, [text, isDeleting, loopNum]);
 
   useEffect(() => {
@@ -73,11 +66,7 @@ export const Banner = () => {
                   <span className="tagline">Welcome to my Portfolio</span>
                   <h1>
                     {`Hi! I'm Prathamesh Jaiswal `}
-                    <span
-                      className="txt-rotate"
-                      dataPeriod="1000"
-                      data-rotate='[ "Web Developer", "Software Developer", "Automation Engineer" ]'
-                    >
+                    <span className="txt-rotate">
                       <span className="wrap">{text}</span>
                     </span>
                   </h1>
