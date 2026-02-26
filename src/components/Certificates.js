@@ -15,7 +15,7 @@ export const Certificates = () => {
       preview: "cert2.png",
     },
     {
-      title: "Runner-Up – ARMTECH Hackathon (QSpiders Deccan)",
+      title: "Runner-Up – WARTECH Hackathon",
       file: "cert3.pdf",
       preview: "cert3.png",
     },
