@@ -6,6 +6,7 @@ import projImg3 from "../assets/img/project-img3.png";
 import projImg4 from "../assets/img/project-img4.png";
 import projImg5 from "../assets/img/project-img5.png";
 import projImg6 from "../assets/img/project-img6.png";
+import projImg7 from "../assets/img/project-img7.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
@@ -23,6 +24,12 @@ export const Projects = () => {
       description: "Traditional & custom art gallery",
       imgUrl: projImg3,
       link: "https://www.jaiswalart.in/",
+    },
+    {
+      title: "Pennywise",
+      description: "Personal finance management app",
+      imgUrl: projImg7,
+      link: "https://pennywise-fm724aj42-prathameshs-projects-003b6a5b.vercel.app/",
     },
   ];
 
@@ -53,7 +60,7 @@ export const Projects = () => {
       description:
         "Built a Power BI dashboard to analyze Twitter data, tracking tweet counts, impressions, engagement rate, media views, and user interactions by day and week for actionable insights.",
       imgUrl: projImg6,
-      link: "https://app.powerbi.com/view?r=eyJrIjoiZGI0YWI0OGEtZWEwZC00YzRlLTk2N2YtMzRhZmE5YTBmMzJkIiwidCI6ImFmMWM1NzY1LTE2NmYtNDZjZC1iYzZiLWNiNDZhNDFhY2IxZiJ9", 
+      link: "https://app.powerbi.com/view?r=eyJrIjoiZGI0YWI0OGEtZWEwZC00YzRlLTk2N2YtMzRhZmE5YTBmMzJkIiwidCI6ImFmMWM1NzY1LTE2NmYtNDZjZC1iYzZiLWNiNDZhNDFhY2IxZiJ9",
     },
   ];
 
