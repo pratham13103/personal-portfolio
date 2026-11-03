@@ -7,6 +7,7 @@ import projImg4 from "../assets/img/project-img4.png";
 import projImg5 from "../assets/img/project-img5.png";
 import projImg6 from "../assets/img/project-img6.png";
 import projImg7 from "../assets/img/project-img7.png";
+import projImg8 from "../assets/img/project-img8.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
@@ -34,13 +35,19 @@ export const Projects = () => {
   ];
 
   const tab2Projects = [
-    {
-      title: "Driver Drowsiness Detection",
-      description: "Real-time driver alertness monitoring",
-      imgUrl: projImg4,
-      link: "https://github.com/pratham13103/Driver-Drowsiness-Detection",
-    },
-  ];
+  {
+    title: "Driver Drowsiness Detection",
+    description: "Real-time driver alertness monitoring",
+    imgUrl: projImg4,
+    link: "https://github.com/pratham13103/Driver-Drowsiness-Detection",
+  },
+  {
+    title: "NetPulse AI",
+    description: "Telecom network monitoring and anomaly detection",
+    imgUrl: projImg8,
+    link: "https://github.com/pratham13103/netPulse-AI/",
+  },
+];
   const tab3Projects = [
     {
       title: "Whatsapp Chat Analyzer",
